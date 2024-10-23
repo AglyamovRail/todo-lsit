@@ -1,0 +1,22 @@
+body { 
+    margin: 0;
+    background-color: #eef4fb;
+}
+header { 
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    background-color: rgb(47,128,237);
+}
+
+header section { 
+    height: 50px;
+}
+
+header h1 { 
+    padding-left: 65px;
+    font-size: 2.25rem;
+    color: white;
+    margin: 0;
+}
+

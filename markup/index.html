@@ -1,0 +1,57 @@
+<!DOCTYPE html lang="ru">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список задач</title>
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <link rel="stylesheet" href="css/adding a task.css" type="text/css">
+    <link rel="stylesheet" href="css/task.css" type="text/css">
+    <link rel="stylesheet" href="css/task area.css" type="text/css">
+    <link rel="stylesheet" href="css/clear button.css" type="text/css">
+    <link rel="stylesheet" href="css/normalize.css" type="text/css">
+</head>
+<body>
+    <noscript>Включите JavaScript, чтобы сайт работал корректно!</noscript>
+    <header>
+        <section>
+            <h1>Список задач</h1>
+        </section>
+    </header>
+    
+    <section class="enter">
+        <h2>Новая задача</h2>
+        <div>
+            <form> 
+                <input type="text" name="text" class="input-text" placeholder="Название задачи... " required>
+                <input type="submit" name="submit" class="input-submit" value="＋ Добавить">
+            </form>
+        </div>
+    </section>
+    <section class="list">
+            <ul class="backlog-list">
+                <h3 class="backlog">Бэклог</h3>
+                <li>Выучить JS</li>
+                <li>Выучить React</li>
+                <li>Сделать домашку</li>
+            </ul>
+            <ul class="in-process-list">
+                <h3 class="in-process">В процессе</h3>
+                <li>Выпить смузи</li>
+                <li>Попить воды</li>
+            </ul>
+            <ul class="done-list">   
+                <h3 class="done">Готово</h3>
+                <li>Позвонить маме</li>
+                <li>Погладить кота</li>
+            </ul>
+            <ul class="basket-list">
+                <h3 class="basket">Корзина</h3>
+                <li>Сходить погулять</li>
+                <li>Прочитать войну и Мир</li>
+                <button class="clear-button">&#215 Очистить</button>
+            </ul>
+    </section>
+</body>
+</html>

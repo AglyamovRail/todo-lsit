@@ -1,0 +1,45 @@
+.enter > h2 { 
+    margin-left: 25px;
+    padding-top: 20px;
+    font-size: 2.25rem;
+}
+
+.input-text { 
+    width: 250px;
+    height: 50px;
+    padding-left: 10px;
+    border-radius: 8px;
+    border-color: rgb(223, 223, 223);
+    border-style: solid;
+    margin-left: 20px;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.input-text::-webkit-input-placeholder { 
+    color: rgb(223, 223, 223);
+}
+    
+.input-submit:hover { 
+    cursor: pointer;
+}
+
+.input-submit { 
+    width: 180px;
+    height: 50px;
+    margin-left: 15px;
+    border-radius: 10px;
+    border:none;
+    background-color: rgb(47,128,237);
+    color: white;
+    font-size: 1.1rem;
+}
+
+section > .enter { 
+    width: 500px;
+    height: 170px;
+    margin-top: 60px;
+    margin-left: 60px;
+    border-radius: 20px;
+    background-color: white;
+}

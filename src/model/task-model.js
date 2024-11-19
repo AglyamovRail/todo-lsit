@@ -37,15 +37,15 @@ export default class TasksModel {
     if (taskGroup) {
       const task = taskGroup.tasks.find(task => task.id === taskId);
       if (task) {
-        // Удаляем задачу из текущего списка
+       
         taskGroup.tasks = taskGroup.tasks.filter(t => t.id !== taskId);
   
-        // Добавляем задачу в нужный список в нужное место
+       
         const newGroup = this.#boardtasks.find(group => group.status === newStatus);
         if (newIndex >= 0 && newIndex < newGroup.tasks.length) {
-          newGroup.tasks.splice(newIndex, 0, task); // Вставляем на нужный индекс
+          newGroup.tasks.splice(newIndex, 0, task); 
         } else {
-          newGroup.tasks.push(task); // Если индекс некорректный, добавляем в конец
+          newGroup.tasks.push(task); 
         }
   
         task.status = newStatus;

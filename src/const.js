@@ -1,4 +1,3 @@
-// const.js
 import { tasks } from './mock/task.js';
 
 const groupedTasks = tasks.reduce((acc, task) => {
@@ -27,7 +26,7 @@ const groupedTasks = tasks.reduce((acc, task) => {
       tasks: [],
     };
   }
-  // Добавляем и name, и id для каждой задачи
+  
   acc[status].tasks.push({ id: task.id, name: task.title });
   return acc;
 }, {});

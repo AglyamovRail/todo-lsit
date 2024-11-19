@@ -30,8 +30,8 @@ formContainer.querySelector('form').addEventListener('submit', (event) => {
       title: taskTitle,
     };
 
-    tasksModel.addTask(newTask); // Добавляем задачу в "Бэклог"
-    inputField.value = ''; // Очищаем поле ввода после добавления
+    tasksModel.addTask(newTask);
+    inputField.value = ''; 
   }
 });
 

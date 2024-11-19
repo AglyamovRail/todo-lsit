@@ -2,7 +2,7 @@ import { AbstractComponent } from '../framework/view/abstract-component.js';
 
 function createTaskComponentTemplate(task) {
   return (
-    `<li class="task" draggable="true">${task.name}</li>` // Добавляем draggable атрибут
+    `<li class="task" draggable="true">${task.name}</li>`
   );
 }
 

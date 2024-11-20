@@ -32,24 +32,29 @@ export default class TasksBoardPresenter {
 
   #renderBoard() {
     const sortedStatuses = ['backlog', 'in-process', 'done', 'basket'];
-
+  
     sortedStatuses.forEach((status) => {
       const list = this.#tasksModel.tasks.find(group => group.status === status);
-
+  
       if (list) {
         const tasksListComponent = new TasksListComponent(list.title, list.status, this.#handleTaskDrop.bind(this));
         render(tasksListComponent, this.#tasksBoardComponent.element);
-
+  
         this.#renderTasksList(tasksListComponent, list.tasks);
-
+  
         if (status === 'basket') {
           const clearButtonComponent = new ButtonComponent();
           tasksListComponent.element.appendChild(clearButtonComponent.element);
-
-          clearButtonComponent.element.addEventListener('click', () => {
-            this.#tasksModel.clearBasket();
-            clearButtonComponent.element.disabled = true;
-          });
+  
+          if (list.tasks.length === 0) {
+            clearButtonComponent.element.classList.add('button-disabled');
+          } else {
+            clearButtonComponent.element.classList.remove('button-disabled');
+            clearButtonComponent.element.addEventListener('click', () => {
+              this.#tasksModel.clearBasket();
+              clearButtonComponent.element.disabled = true;
+            });
+          }
         }
       }
     });

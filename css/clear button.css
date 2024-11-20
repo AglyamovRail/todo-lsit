@@ -13,3 +13,9 @@
 .clear-button:hover {
     cursor: pointer;
 }
+
+.button-disabled {
+    text-decoration: line-through; 
+    opacity: 0.5; 
+    pointer-events: none; 
+  }

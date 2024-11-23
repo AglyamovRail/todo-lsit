@@ -12,9 +12,6 @@
     border-radius: 2%;
     color: rgb(192, 192, 192);
 }
-<<<<<<< HEAD
-=======
-
 
 .board__no-tasks {
     display: flex;
@@ -41,5 +38,3 @@
       opacity: 1;
     }
   }
-  
->>>>>>> 12edd0b (added lab7)

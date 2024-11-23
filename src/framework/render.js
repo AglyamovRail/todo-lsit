@@ -7,25 +7,16 @@ const RenderPosition = {
     AFTEREND: 'afterend',
   };
   
-<<<<<<< HEAD
-  
-=======
->>>>>>> 12edd0b (added lab7)
   function createElement(template) {
     const newElement = document.createElement('div');
     newElement.innerHTML = template;
   
-<<<<<<< HEAD
+    return newElement.firstElementChild;
+  }
   
     return newElement.firstElementChild;
   }
   
-  
-=======
-    return newElement.firstElementChild;
-  }
-  
->>>>>>> 12edd0b (added lab7)
   function render(component, container, place = RenderPosition.BEFOREEND) {
     if (!(component instanceof AbstractComponent)) {
       throw new Error('Can render only components');

@@ -12,3 +12,34 @@
     border-radius: 2%;
     color: rgb(192, 192, 192);
 }
+<<<<<<< HEAD
+=======
+
+
+.board__no-tasks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    text-align: center;
+    height: 100%;
+    border: none;
+    padding: 30px;
+    padding-left: 65px;
+    font-size: 50px;
+    margin: 0;
+    background-color: #eef4fb;
+    color: #333;
+    animation: fadeIn 1s ease-out;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+>>>>>>> 12edd0b (added lab7)

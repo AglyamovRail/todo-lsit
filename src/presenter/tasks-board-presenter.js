@@ -8,8 +8,6 @@ import { render } from '../framework/render.js';
 
 export default class TasksBoardPresenter {
   #tasksBoardComponent = new TaskBoardComponent();
-  #boardContainer;
-  #tasksModel;
   #loadingViewComponent = new LoadingViewComponent();
   #boardContainer;
   #tasksModel;
@@ -41,21 +39,6 @@ export default class TasksBoardPresenter {
   }
 
   #renderBoard() {
-    const sortedStatuses = ['backlog', 'in-process', 'done', 'basket'];
-  
-    sortedStatuses.forEach((status) => {
-      const list = this.#tasksModel.tasks.find(group => group.status === status);
-  
-      if (list) {
-        const tasksListComponent = new TasksListComponent(list.title, list.status, this.#handleTaskDrop.bind(this));
-        render(tasksListComponent, this.#tasksBoardComponent.element);
-  
-        this.#renderTasksList(tasksListComponent, list.tasks);
-  
-        if (status === 'basket') {
-          const clearButtonComponent = new ButtonComponent();
-          tasksListComponent.element.appendChild(clearButtonComponent.element);
-  
     if (this.#isLoading) {
       render(this.#loadingViewComponent, this.#tasksBoardComponent.element);
       return;
@@ -97,11 +80,6 @@ export default class TasksBoardPresenter {
   #renderTasksList(tasksListComponent, tasks) {
     const tasksListElement = tasksListComponent.element.querySelector('.task-list');
 
-    if (tasks.length === 0) {
-      const placeholderComponent = new PlaceholderComponent();
-      render(placeholderComponent, tasksListElement);
-    } else {
-      tasks.forEach(task => {
     if (!tasks || tasks.length === 0) {
       const placeholderComponent = new PlaceholderComponent();
       render(placeholderComponent, tasksListElement);
@@ -118,8 +96,6 @@ export default class TasksBoardPresenter {
   }
 
   #handleTaskDrop(taskId, newStatus, newIndex) {
-    this.#tasksModel.updateTaskStatus(taskId, newStatus, newIndex);
-  }  
     try {
       this.#tasksModel.updateTaskStatus(taskId, newStatus, newIndex);
     } catch (error) {

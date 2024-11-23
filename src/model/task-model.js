@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 import { groupedTasksArray } from '../const.js';
 
 export default class TasksModel {
   #boardtasks = groupedTasksArray;
   #observers = [];
 
-=======
 import { fetchTasks, addTaskToServer, updateTaskStatusOnServer, clearBasketOnServer } from '../api.js';
 
 export default class TasksModel {
@@ -53,7 +51,6 @@ export default class TasksModel {
     };
   }
   
->>>>>>> 12edd0b (added lab7)
   get tasks() {
     return this.#boardtasks;
   }
@@ -69,7 +66,6 @@ export default class TasksModel {
   _notifyObservers() {
     this.#observers.forEach(observer => observer());
   }
-<<<<<<< HEAD
 
   addTask(task) {
     const backlog = this.#boardtasks.find(group => group.status === 'backlog');
@@ -88,10 +84,7 @@ export default class TasksModel {
     if (taskGroup) {
       const task = taskGroup.tasks.find(task => task.id === taskId);
       if (task) {
-       
         taskGroup.tasks = taskGroup.tasks.filter(t => t.id !== taskId);
-  
-       
         const newGroup = this.#boardtasks.find(group => group.status === newStatus);
         if (newIndex >= 0 && newIndex < newGroup.tasks.length) {
           newGroup.tasks.splice(newIndex, 0, task); 
@@ -106,8 +99,6 @@ export default class TasksModel {
   }
   
 }
-=======
-  
 
   async addTask(task) {
     const newTask = {

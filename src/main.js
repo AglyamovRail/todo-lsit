@@ -12,10 +12,7 @@ const taskAreaContainer = document.querySelector('.list');
 const tasksBoardContainer = document.querySelector('.list');
 
 const tasksModel = new TasksModel();
-<<<<<<< HEAD
-=======
 await tasksModel.init();
->>>>>>> 12edd0b (added lab7)
 const tasksBoardPresenter = new TasksBoardPresenter({ boardContainer: tasksBoardContainer, tasksModel });
 
 render(new HeaderComponent(), bodyContainer, RenderPosition.BEFOREBEGIN);

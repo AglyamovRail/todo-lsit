@@ -3,7 +3,7 @@ const API_URL = 'https://67220f092108960b9cc2b93c.mockapi.io/tasks';
 export const fetchTasks = async () => {
   const response = await fetch(API_URL);
   if (!response.ok) {
-    throw new Error('Failed to fetch tasks');
+    throw new Error('Не удалось получить задания');
   }
   return await response.json();
 };
@@ -23,7 +23,7 @@ export function addTaskToServer(taskTitle, status) {
       .then(function(response) {
         if (!response.ok) {
           console.error('Ошибка при добавлении задачи, код ответа:', response.status);
-          throw new Error('Failed to create new task');
+          throw new Error('Не удалось создать новую задачу');
         }
         return response.json();
       })
@@ -40,7 +40,7 @@ export function addTaskToServer(taskTitle, status) {
     try {
       const taskData = await fetch(`https://67220f092108960b9cc2b93c.mockapi.io/tasks/${taskId}`);
       if (!taskData.ok) {
-        throw new Error(`Task with id ${taskId} not found`);
+        throw new Error(`Задача с идентификатором ${taskId} не найдена`);
       }
       const task = await taskData.json();
       if (task.status === newStatus) {
@@ -57,11 +57,11 @@ export function addTaskToServer(taskTitle, status) {
         }),
       });
       if (!updateResponse.ok) {
-        throw new Error('Failed to update task status');
+        throw new Error('Не удалось обновить статус задачи');
       }
       return await updateResponse.json();
     } catch (error) {
-      console.error('Error updating task status:', error);
+      console.error('Ошибка при обновлении статуса задачи:', error);
       throw error;
     }
   };
@@ -76,7 +76,7 @@ export const clearBasketOnServer = async () => {
       });
   
       if (!response.ok) {
-        throw new Error('Failed to clear basket');
+        throw new Error('Не удалось очистить корзину');
       }
     }
   };

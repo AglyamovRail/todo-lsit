@@ -14,9 +14,6 @@ const RenderPosition = {
     return newElement.firstElementChild;
   }
   
-    return newElement.firstElementChild;
-  }
-  
   function render(component, container, place = RenderPosition.BEFOREEND) {
     if (!(component instanceof AbstractComponent)) {
       throw new Error('Can render only components');

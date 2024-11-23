@@ -1,10 +1,6 @@
 import { AbstractComponent } from '../framework/view/abstract-component.js';
 
 function createTaskListComponentTemplate(listname, status) {
-  return (
-    `<ul class="${status}-list">
-      <h3 class="${status}">${listname}</h3>
-=======
   const statusTranslation = {
     backlog: 'Бэклог',
     'in-process': 'В процессе',
@@ -19,6 +15,7 @@ function createTaskListComponentTemplate(listname, status) {
     </ul>`
   );
 }
+
 
 export default class TaskListComponent extends AbstractComponent {
   constructor(listname, status, onTaskDrop) {
@@ -35,12 +32,6 @@ export default class TaskListComponent extends AbstractComponent {
 
   #setDropHandler() {
     const container = this.element.querySelector('.task-list');
-    
-    let targetIndex = null;
-
-    
-    container.addEventListener('dragover', (event) => {
-      event.preventDefault();
   
     let targetIndex = null;
   
@@ -51,21 +42,7 @@ export default class TaskListComponent extends AbstractComponent {
       if (targetElement) {
         const taskList = Array.from(container.children);
         targetIndex = taskList.indexOf(targetElement);
-
-        taskList.forEach(task => task.classList.remove('drag-over'));
-        targetElement.classList.add('drag-over');
-      } else {
-        
-        targetIndex = 0;
-      }
-    });
-
-    container.addEventListener('drop', (event) => {
-      event.preventDefault();
-      const taskId = event.dataTransfer.getData('text/plain');
-    
-      container.querySelectorAll('.task').forEach(task => task.classList.remove('drag-over'));
-      
+  
         taskList.forEach(task => task.classList.remove('drag-over'));
         targetElement.classList.add('drag-over');
       } else {
@@ -85,5 +62,6 @@ export default class TaskListComponent extends AbstractComponent {
       }
     });
   }
-
+  
+  
 }
